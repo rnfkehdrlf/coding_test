@@ -24,12 +24,12 @@ class MainActivity : AppCompatActivity() {
             val a  = input1.text.toString()
             val b = input2.text.toString()
             val c = input3.text.toString()
-            result = quiz007(a,b,c)
+//            result = quiz007(a,b,c)
             tvResult.text = result
         }
     }
 
-    fun quiz007(input1: String, input2: String, input3:String): String{
+    fun quiz(input1: String, input2: String, input3:String): String{
 
         val m = input2.toInt()
         val n = input1.toInt()
@@ -53,28 +53,6 @@ class MainActivity : AppCompatActivity() {
                 count++
                 i++
                 j--
-            }
-        }
-        return count.toString()
-    }
-    fun quiz006(): String {
-        var count = 1
-        var sum = 1
-        var startIndex = 1
-        var endIndex = 1
-        val n = 20
-
-        while (endIndex != n) {
-            if (sum == n) {
-                count++
-                endIndex++
-                sum += endIndex
-            } else if (sum > n) {
-                sum -= startIndex
-                startIndex++
-            } else if (sum < n) {
-                endIndex++
-                sum += endIndex
             }
         }
         return count.toString()
