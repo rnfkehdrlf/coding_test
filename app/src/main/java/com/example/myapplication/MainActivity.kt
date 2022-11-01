@@ -24,59 +24,41 @@ class MainActivity : AppCompatActivity() {
             val a  = input1.text.toString()
             val b = input2.text.toString()
             val c = input3.text.toString()
-            result = quiz007(a,b,c)
+            result = quiz008(a,b)
             tvResult.text = result
         }
     }
 
-    fun quiz007(input1: String, input2: String, input3:String): String{
+    fun quiz008(input1: String, input2: String): String{
 
-        val m = input2.toInt()
         val n = input1.toInt()
+//        val m = input2.toInt()
         var list = ArrayList<Int>()
         var count = 0
 
-        var st = StringTokenizer(input3)
+        var st = StringTokenizer(input2)
         for (token in st) {
             list.add(token.toString().toInt())
         }
 
         list.sort()
-        var i = 0
-        var j = list.size -1
-        while (i < j) {
-            if (list[i] + list[j] > m) {
-                j--
-            } else if (list[i] + list[j] < m) {
-                i++
-            } else {
-                count++
-                i++
-                j--
+        for (k in list) {
+            var i = 0
+            var j = list.size -1
+            while (i < j) {
+                if (list[i] + list[j] > k) {
+                    j--
+                } else if (list[i] + list[j] < k) {
+                    i++
+                } else {
+                    if (list[i] != k && list[j] != k) {
+                        count++
+                    }
+                    break
+                }
             }
         }
-        return count.toString()
-    }
-    fun quiz006(): String {
-        var count = 1
-        var sum = 1
-        var startIndex = 1
-        var endIndex = 1
-        val n = 20
 
-        while (endIndex != n) {
-            if (sum == n) {
-                count++
-                endIndex++
-                sum += endIndex
-            } else if (sum > n) {
-                sum -= startIndex
-                startIndex++
-            } else if (sum < n) {
-                endIndex++
-                sum += endIndex
-            }
-        }
         return count.toString()
     }
 }
