@@ -57,26 +57,4 @@ class MainActivity : AppCompatActivity() {
         }
         return count.toString()
     }
-    fun quiz006(): String {
-        var count = 1
-        var sum = 1
-        var startIndex = 1
-        var endIndex = 1
-        val n = 20
-
-        while (endIndex != n) {
-            if (sum == n) {
-                count++
-                endIndex++
-                sum += endIndex
-            } else if (sum > n) {
-                sum -= startIndex
-                startIndex++
-            } else if (sum < n) {
-                endIndex++
-                sum += endIndex
-            }
-        }
-        return count.toString()
-    }
 }
